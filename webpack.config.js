@@ -1,21 +1,11 @@
-const path = require("path");
-module.exports = {
-  mode: "development",
-  entry: "./src/frontend/index.ts",
+var base = require("./webpack.base");
+const { merge } = require("webpack-merge");
+
+module.exports = merge(base, {
+	entry: "./src/client",
   output: {
-    path: path.resolve("dist"),
-    filename: "bundle.js",
+    path: base.output.path,
+    filename: "bundle.js"
   },
-  resolve: {
-    extensions: [".ts", ".js"],
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(j|t)sx?$/,
-        exclude: /node_modules/,
-        loader: "babel-loader",
-      },
-    ],
-  },
-};
+  
+});
