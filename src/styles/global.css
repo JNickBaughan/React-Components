@@ -1,0 +1,34 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: aqua;
+}
+
+.form-input {
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.input {
+  background-color: bisque;
+  border-bottom: 2px solid black;
+  width: 200px;
+  height: 50px;
+}
+
+.hidden {
+  opacity: 0;
+  position: relative;
+}
+
+.drop-down-content {
+  position: relative;
+  top: 53px;
+}
+
+.drop-down-input {
+  background-color: bisque;
+  border: 2px solid black;
+  margin: 2px;
+}
