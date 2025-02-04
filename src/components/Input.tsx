@@ -8,6 +8,7 @@ const Input = ({
   changeHandler: any;
 }) => {
   const [localValue, setLocalValue] = React.useState(value ?? "");
+  const [hasFocus, setHasFocus] = React.useState(false);
   const inputRef = React.useRef<HTMLInputElement>(null);
 
   return (
@@ -18,7 +19,8 @@ const Input = ({
         }}
         className="input"
       >
-        {localValue}
+        <div>{localValue}</div>
+        {hasFocus && <div className="blink" />}
       </div>
       <input
         className="hidden"
@@ -26,7 +28,11 @@ const Input = ({
         onChange={(input) => {
           setLocalValue(input.currentTarget.value);
         }}
-        onBlur={() => changeHandler(localValue)}
+        onFocus={() => setHasFocus(true)}
+        onBlur={() => {
+          changeHandler(localValue);
+          setHasFocus(false);
+        }}
       />
     </>
   );

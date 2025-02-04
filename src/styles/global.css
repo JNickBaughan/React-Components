@@ -14,7 +14,8 @@
   background-color: bisque;
   border-bottom: 2px solid black;
   width: 200px;
-  height: 50px;
+  height: 30px;
+  display: flex;
 }
 
 .hidden {
@@ -31,4 +32,36 @@
   background-color: bisque;
   border: 2px solid black;
   margin: 2px;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes blinkAnimation {
+  from {
+    visibility: visible;
+  }
+  to {
+    visibility: hidden;
+  }
+}
+
+/* Standard syntax */
+@keyframes blinkAnimation {
+  from {
+    background: #666666;
+    color: #666666;
+  }
+  to {
+    background: #88d8b0;
+    color: #88d8b0;
+  }
+}
+
+.blink {
+  animation-name: blinkAnimation;
+  animation-duration: 1.05s;
+  animation-iteration-count: infinite;
+  width: 10px;
+  height: 3px;
+  background-color: red;
+  margin-top: 11px;
 }
